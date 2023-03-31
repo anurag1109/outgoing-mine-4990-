@@ -2,93 +2,101 @@ var kidsdata = [
   {
     image:
       "https://img.mytheresa.com/560/560/33/jpeg/catalog/product/1f/P00709974.jpg",
-    name: "LORO PIANA",
+    name: "MARC JACOBS KIDS",
     price: 585,
   },
   {
     image:
       "https://img.mytheresa.com/560/560/33/jpeg/catalog/product/5d/P00710025.jpg",
-    name: "LORO PIANA",
+    name: "NEW BALANCE KIDS",
     price: 1095,
   },
   {
     image:
       "https://img.mytheresa.com/560/560/33/jpeg/catalog/product/ad/P00712412.jpg",
-    name: "LORO PIANA",
+    name: "HUNZA G KIDS",
     price: 499,
   },
   {
     image:
       "https://img.mytheresa.com/560/560/33/jpeg/catalog/product/ad/P00712412.jpg",
-    name: "LORO PIANA",
+    name: "GUCCI KIDS",
     price: 1555,
   },
   {
     image:
       "https://img.mytheresa.com/560/560/33/jpeg/catalog/product/e0/P00709999.jpg",
-    name: "LORO PIANA",
+    name: "HUNZA G KIDS",
     price: 1095,
   },
   {
     image:
       "https://img.mytheresa.com/560/560/33/jpeg/catalog/product/a4/P00712474.jpg",
-    name: "LORO PIANA",
+    name: "NEW BALANCE KIDS",
     price: 499,
   },
   {
     image:
       "https://img.mytheresa.com/560/560/33/jpeg/catalog/product/a7/P00712480.jpg",
-    name: "LORO PIANA",
+    name: "THE ANIMALS OBSERVATORY",
     price: 1099,
   },
   {
     image:
       "https://img.mytheresa.com/560/560/33/jpeg/catalog/product/35/P00709970.jpg",
-    name: "LORO PIANA",
+    name: "CHLOÉ KIDS",
     price: 1429,
   },
   {
     image:
       "https://img.mytheresa.com/560/560/33/jpeg/catalog/product/8c/P00709981.jpg",
-    name: "LORO PIANA",
+    name: "THE ANIMALS OBSERVATORY",
     price: 585,
   },
   {
     image:
       "https://img.mytheresa.com/560/560/33/jpeg/catalog/product/63/P00709993.jpg",
-    name: "LORO PIANA",
+    name: "MONNALISA",
     price: 795,
   },
   {
     image:
       "https://img.mytheresa.com/560/560/33/jpeg/catalog/product/2d/P00709954.jpg",
-    name: "LORO PIANA",
+    name: "Caramel",
     price: 1429,
   },
   {
     image:
       "https://img.mytheresa.com/560/560/33/jpeg/catalog/product/7d/P00712487.jpg",
-    name: "LORO PIANA",
+    name: "Caramel",
     price: 415,
   },
   {
     image:
       "https://img.mytheresa.com/560/560/33/jpeg/catalog/product/ec/P00710001.jpg",
-    name: "LORO PIANA",
+    name: "Bonpoint",
     price: 1095,
   },
   {
     image:
       "https://img.mytheresa.com/560/560/33/jpeg/catalog/product/26/P00709987.jpg",
-    name: "LORO PIANA",
+    name: "MONNALISA",
     price: 1095,
   },
 ];
+
+pagination(kidsdata);
 var kidsarr = JSON.parse(localStorage.getItem("cartdetail")) || [];
 document.querySelector("#filter").addEventListener("change", priceFilter);
-priceFilter(kidsdata);
-var count = kidsdata.length;
-console.log(count);
+
+// const page = document.querySelectorAll(".page");
+// for (let i = 0; i < page.length; i++) {
+//   page[i].addEventListener("click", (e) => {
+//     let pageno = e.target.innerText;
+//     let newdata = kidsdata.splice((pageno - 1) * 10, pageno * 10);
+//     disptable(newdata);
+//   });
+// }
 
 function priceFilter() {
   var selected = document.querySelector("#filter").value;
@@ -97,19 +105,12 @@ function priceFilter() {
       if (a.price > b.price) return 1;
       if (a.price < b.price) return -1;
       return 0;
-      // console.log(a.price)
     });
-    //  disptable(menarr)
-    // console.log(selected)
-    // made by suraj web 19 roll no 1274
   }
   if (selected == "sortby") {
     kidsdata.sort(function (a, b) {
       return;
-      // console.log(a.price)
     });
-    //  disptable(menarr)
-    // console.log(selected)
   }
   if (selected == "hightolow") {
     kidsdata.sort(function (a, b) {
@@ -117,28 +118,36 @@ function priceFilter() {
       if (a.price < b.price) return 1;
       return 0;
     });
-    //  disptable(menarr)
-    // made by suraj web 19 roll no 1274
   }
-  disptable(kidsdata);
+  pagination(kidsdata);
 }
 
-function brandfilter() {}
-disptable(kidsdata);
+function pagination(data) {
+  let newdata = [];
+  let pageno = 1;
+  const page = document.querySelectorAll(".page");
+  let count=document.getElementById("productlength")
+  for (let i = 0; i < page.length; i++) {
+    page[i].addEventListener("click", (e) => {
+      pageno = e.target.innerText;
+      newdata = data.slice((pageno - 1) * 10, pageno * 10);
+      count.innerText = `${newdata.length} products `;
+      disptable(newdata);
+    });
+  }
+  newdata = data.slice((pageno - 1) * 10, pageno * 10);
+  count.innerText = `${newdata.length} products `;
 
-function disptable(k) {
-  document.getElementById("productlength").innerText = `${count} products `;
+  disptable(newdata);
+}
+
+function disptable(newdata) {
+
   document.querySelector("#right_Section").innerHTML = "";
-  k.forEach(function (el, index) {
+  newdata.forEach(function (el, index) {
     var div = document.createElement("div");
     var avtar = document.createElement("img");
-    // var avtar1 = document.createElement("img")
     avtar.setAttribute("src", el.image);
-    // avtar.addEventListener("mouseover",function(){
-    //   changeimage(kidsdata,index)
-    //   // console.log(el.image)
-    // })
-    // made by suraj web 19 roll no 1274
     var p1 = document.createElement("p");
     p1.innerText = el.name;
     var p2 = document.createElement("p");
@@ -153,19 +162,13 @@ function disptable(k) {
     div.append(avtar, p1, p2, h4, btn);
     document.getElementById("right_Section").append(div);
   });
-  //  function changeimage(kidsdata,index){
-  //   console.log(kidsdata.image1)
-  // made by suraj web 19 roll no 1274
-  //  }
 }
 
 function addall(el) {
-  //  el.quantity = 1;
-  //  el.total_price = el.price * 1;
-
   kidsarr.push(el);
   localStorage.setItem("cartdetail", JSON.stringify(kidsarr));
 }
+
 let ArrayData = [];
 let allData = document.getElementsByClassName("check");
 Array.from(allData).forEach(function (e, i) {
@@ -173,9 +176,6 @@ Array.from(allData).forEach(function (e, i) {
     .getElementsByClassName("check")
     [i].addEventListener("click", function () {
       let checkbox = document.getElementsByClassName("check")[i];
-
-      // console.log(checkbox.value);
-      // made by suraj web 19 roll no 1274
       if (checkbox.checked == true) {
         ArrayData.push(checkbox.value);
         CheckboxFun(ArrayData);
@@ -189,29 +189,39 @@ Array.from(allData).forEach(function (e, i) {
 
 function CheckboxFun(arr) {
   let newArray = [];
-
   if (arr.length == 0) {
-    disptable(kidsdata);
+    pagination(kidsdata);
     return;
   }
+
   arr.forEach(function (e) {
-    let result = kidsdata.filter(function (x) {
-      return x.name == e;
-    });
-    // console.log(result)
-    // made by suraj web 19 roll no 1274
-    newArray.push(result);
+    newArray.push(...kidsdata.filter((x) => x.name == e));
   });
-  // console.log(newArray);
-  let lastArray = [];
-  for (let i = 0; i < newArray.length; i++) {
-    for (let j = 0; j < newArray[i].length; j++) {
-      // console.log(newArray[i][j])
-      // made by suraj web 19 roll no 1274
-      lastArray.push(newArray[i][j]);
-    }
-  }
-  disptable(lastArray);
+  // let lastArray = [];
+  // for (let i = 0; i < newArray.length; i++) {
+  //   for (let j = 0; j < newArray[i].length; j++) {
+  //     lastArray.push(newArray[i][j]);
+  //   }
+  // }
+  pagination(newArray);
 }
 
-disptable(kidsdata);
+let footer = document.getElementById("footer");
+fetch("./footer.html")
+  .then((res) => res.text())
+  .then((data) => {
+    footer.innerHTML = data;
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(data, "text/html");
+    eval(doc.querySelector("script").textContent);
+  });
+
+let header = document.getElementById("header");
+fetch("./header.html")
+  .then((res) => res.text())
+  .then((data) => {
+    header.innerHTML = data;
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(data, "text/html");
+    eval(doc.querySelector("script").textContent);
+  });
