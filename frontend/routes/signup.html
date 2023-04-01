@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>myAccount_page</title>
+    <title>signup</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="../css/myaccount.css" />
+    <link rel="stylesheet" href="../css/signup.css" />
   </head>
   <body>
-   
     <div id="header"></div>
+
     <!--SIGN UP Form  -->
     <div id="signup_details">
       <div class="contleft">
@@ -36,12 +36,7 @@
           <br />
           <input type="text" class="email" placeholder="Enter Email" /> <br />
           <br />
-          <input type="password" class="pass" placeholder="Enter password" />
-          <br />
-          <br />
-          <input type="text" class="country" placeholder="Country" /> <br />
-          <br />
-          <input type="text" class="english" placeholder="Language" /> <br />
+          <input type="text" class="english" placeholder="English" /> <br />
           <br />
           Date of Birth <br />
           <input class="DOB" type="date" placeholder="DD/MM/YYYY" />
@@ -61,42 +56,15 @@
           <input type="submit" class="submit" value="SIGN UP HERE" />
         </form>
       </div>
-      <div>
-        <p class="vertical_line"></p>
-      </div>
       <div class="contright">
-        <h3>ALREADY REGISTERED?</h3>
-        <p>If you have an account with us, please log in.</p>
-        <!-- LOGIN form -->
-        <form action="" class="login_form">
-          <input
-            type="text"
-            class="loginEmail"
-            placeholder="Email Address *"
-          /><br />
-          <input
-            type="password"
-            class="loginPass"
-            placeholder="Email Password *"
-          />
-          <p>Required Feild *</p>
-          <a href="http://127.0.0.1:5500/myaccount.html"
-            >Forgot Your password</a
-          >
-          <br />
-          <br />
-          <!-- <button class="login_btn" onclick="login()">LOG IN</button> -->
-          <input type="submit" value="LOGIN" class="login_button" />
-          <br />
-        </form>
-
-        <p>
-          At Mytheresa, we keep your information secure. As a result, it will be
-          necessary for you to log in to your account before you are able to
-          place an order or change the information on your account. You will be
-          asked to log in to complete your order even if you have already been
-          greeted on the website.
-        </p>
+        <h3>BE THE FIRST TO FIND OUT ABOUT:</h3>
+        <ul>
+          <li>our 900 new arrivals each week</li>
+          <li>exclusive pre-shopping events</li>
+          <li>not-to-be-missed sales</li>
+          <li>personalized product recommendations</li>
+          <li>unique designer collaborations</li>
+        </ul>
       </div>
     </div>
     <br />
@@ -197,14 +165,14 @@
     </footer>
   </body>
 </html>
-<script src="../script/myaccount.js"></script>
+<script src="../script/signup.js"></script>
 <script>   
-  let header = document.getElementById('header');
-  fetch('./header.html')
-   .then(res => res.text())
-   .then(data => {
-       header.innerHTML = data
-       const parser = new DOMParser();
-       const doc = parser.parseFromString(data, "text/html")
-       eval(doc.querySelector("script").textContent)
-   })</script>
+ let header = document.getElementById('header');
+ fetch('./header.html')
+  .then(res => res.text())
+  .then(data => {
+      header.innerHTML = data
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(data, "text/html")
+      eval(doc.querySelector("script").textContent)
+  })</script>
