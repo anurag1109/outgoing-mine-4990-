@@ -1,0 +1,149 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+/* Nav CSS */
+.navbar {
+  width: 80%;
+  margin: auto;
+}
+.pages {
+  display: flex;
+  justify-content: space-between;
+}
+.left {
+  display: flex;
+}
+.right {
+  display: flex;
+}
+.left > div {
+  margin: 0px 8px;
+  padding: 10px;
+}
+.right > div {
+  margin: 0px 8px;
+  padding: 10px;
+}
+/* header css */
+header {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.Web_name {
+  /* font-size: 30px; */
+  font-family: Arial, Helvetica, sans-serif;
+}
+.shop_bag {
+  display: flex;
+  padding: 10px;
+  margin: auto 0px;
+}
+.shop_bag > p {
+  margin: 5px 5px;
+}
+
+.shop_bag > i {
+  margin: 0px 5px;
+  /* padding: 10px; */
+}
+
+.sale70 {
+  /* position: fixed; */
+}
+.main_category {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+}
+#search {
+  width: 150px;
+  height: 30px;
+}
+/* service & footer */
+.service_1 {
+  display: flex;
+}
+
+/*.service  */
+.service {
+  width: 80%;
+  margin: auto;
+  display: flex;
+}
+.service > div {
+  width: 22%;
+  margin: auto;
+  margin-top: 0%;
+}
+.service > div > h3 {
+  font-weight: bold;
+  font-size: larger;
+}
+/* icon */
+.icon {
+  display: flex;
+}
+.icon > i {
+  margin: 0px 10px;
+}
+.policy {
+  display: flex;
+  margin-top: 15px;
+}
+.policy > p {
+  margin-top: 0px;
+}
+/* footer */
+footer {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  font-size: larger;
+}
+footer > div {
+  display: flex;
+}
+
+/* SIGN UP FORM */
+#radio {
+  font-weight: bold;
+}
+#form > input {
+  font-weight: bold;
+  padding: 5px 10px;
+}
+#signup_details {
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+  margin: auto;
+}
+.DOB {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 3px;
+  font-weight: bold;
+}
+.submit {
+  background-color: black;
+  color: white;
+  padding: 3px 5px;
+}
+.contleft {
+  width: 50%;
+}
+.contright {
+  width: 30%;
+}
+.agree_terms {
+  display: flex;
+}
+
+.check_p {
+  margin-top: 0px;
+}

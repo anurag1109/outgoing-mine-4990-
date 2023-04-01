@@ -48,15 +48,11 @@
             </select>
         </div>
         <div>
-            <!-- <h4>1</h4>
-          <h4>2</h4>
-          <h4>3</h4>
-          <h4>4   </h4> -->
             <ul>
-                <li class="bold">1</li>
-                <li class="bolder">2</li>
-                <li class="bolder">3</li>
-                <li class="bolder">4 </li>
+                <li class="bolder page">1</li>
+                <li class="bolder page">2</li>
+                <li class="bolder page">3</li>
+                <li class="bolder page">4 </li>
             </ul>
         </div>
     </div>
@@ -205,49 +201,17 @@
               </label>
             </div>
         </div>
+
         <div id="right_Section">
-            <!-- <div>
-                <img src="https://img.mytheresa.com/560/560/33/jpeg/catalog/product/e6/P00577458_d2.jpg"/>
-                <p>BURBERRY KIDS</p>
-                <p>Baby Vintage Check cotton-blend bucket hat</p>
-                <h4>170</h4>
-                <button>Add to cart</button>
-            </div> -->
         </div>
-    </div>
-    </div>
+      </div>
     
 </div>
-    <div id="footer"></div>
+<div id="footer"></div>
 
 </body>
 
 </html>
 <script src="https://kit.fontawesome.com/910e606fce.js" crossorigin="anonymous"></script>
 <script src="../script/productlist.js">
-</script>
-
-<script>
-
-
-let footer = document.getElementById("footer");
-    fetch('./footer.html')
-        .then(res => res.text())
-        .then(data => {
-            footer.innerHTML = data
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(data, "text/html")
-            eval(doc.querySelector("script").textContent)
-        })
-
-    let header = document.getElementById('header');
-
-    fetch('./header.html')
-        .then(res => res.text())
-        .then(data => {
-            header.innerHTML = data
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(data, "text/html")
-            eval(doc.querySelector("script").textContent)
-        })
 </script>

@@ -190,11 +190,6 @@ body {
 }
 
 
-/* .container {
-    /* max-width: 1200px; */
-    /* margin: auto; */
-    
-/* }  */
 
 .row {
     display: flex;
@@ -648,7 +643,7 @@ a {
 }
 
 input[type=text] {
-    width: 120px;
+    /* width: 120px; */
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
     line-height: 30px;

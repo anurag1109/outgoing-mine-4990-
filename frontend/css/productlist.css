@@ -124,7 +124,6 @@
       margin: auto;
       display: flex;
       justify-content: space-between;
-      height: 400px;
   }
   
   #body>div:nth-child(1) {
