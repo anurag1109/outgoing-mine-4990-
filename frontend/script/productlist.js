@@ -85,18 +85,15 @@ var kidsdata = [
   },
 ];
 
-pagination(kidsdata);
+var token = JSON.parse(localStorage.getItem("set_token"));
+if (token) pagination(kidsdata);
+else {
+  alert("You have to login first");
+  window.location.href = "../routes/myaccount.html";
+}
+
 var kidsarr = JSON.parse(localStorage.getItem("cartdetail")) || [];
 document.querySelector("#filter").addEventListener("change", priceFilter);
-
-// const page = document.querySelectorAll(".page");
-// for (let i = 0; i < page.length; i++) {
-//   page[i].addEventListener("click", (e) => {
-//     let pageno = e.target.innerText;
-//     let newdata = kidsdata.splice((pageno - 1) * 10, pageno * 10);
-//     disptable(newdata);
-//   });
-// }
 
 function priceFilter() {
   var selected = document.querySelector("#filter").value;
@@ -126,7 +123,7 @@ function pagination(data) {
   let newdata = [];
   let pageno = 1;
   const page = document.querySelectorAll(".page");
-  let count=document.getElementById("productlength")
+  let count = document.getElementById("productlength");
   for (let i = 0; i < page.length; i++) {
     page[i].addEventListener("click", (e) => {
       pageno = e.target.innerText;
@@ -137,12 +134,10 @@ function pagination(data) {
   }
   newdata = data.slice((pageno - 1) * 10, pageno * 10);
   count.innerText = `${newdata.length} products `;
-
   disptable(newdata);
 }
 
 function disptable(newdata) {
-
   document.querySelector("#right_Section").innerHTML = "";
   newdata.forEach(function (el, index) {
     var div = document.createElement("div");
@@ -167,6 +162,9 @@ function disptable(newdata) {
 function addall(el) {
   kidsarr.push(el);
   localStorage.setItem("cartdetail", JSON.stringify(kidsarr));
+  alert("product has been added to cart");
+  let num = document.getElementById("coo");
+  num.innerHTML = kidsarr.length;
 }
 
 let ArrayData = [];
@@ -197,31 +195,13 @@ function CheckboxFun(arr) {
   arr.forEach(function (e) {
     newArray.push(...kidsdata.filter((x) => x.name == e));
   });
-  // let lastArray = [];
-  // for (let i = 0; i < newArray.length; i++) {
-  //   for (let j = 0; j < newArray[i].length; j++) {
-  //     lastArray.push(newArray[i][j]);
-  //   }
-  // }
   pagination(newArray);
 }
 
-let footer = document.getElementById("footer");
-fetch("./footer.html")
-  .then((res) => res.text())
-  .then((data) => {
-    footer.innerHTML = data;
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(data, "text/html");
-    eval(doc.querySelector("script").textContent);
-  });
-
-let header = document.getElementById("header");
-fetch("./header.html")
-  .then((res) => res.text())
-  .then((data) => {
-    header.innerHTML = data;
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(data, "text/html");
-    eval(doc.querySelector("script").textContent);
-  });
+// const search = document.querySelector(".search").value
+// search.addEventListener("onchange", () => {
+//   for (let i = 0; i < kidsdata.length; i++){
+//     if (kidsdata[i].name.includes(search))
+//       arr.push(kidsdata[i])
+//   }
+// })

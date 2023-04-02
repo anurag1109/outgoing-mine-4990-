@@ -83,7 +83,7 @@ function productQuantityMinus(span, price, acutalPrice) {
   }
   total();
 }
-var TToal = [];
+var totalitem = [];
 function total() {
   let totalData = document.querySelectorAll("tbody td:last-child");
   let totalPrice = 0;
@@ -95,8 +95,8 @@ function total() {
     totalPrice += data;
     priceTag.innerText = totalPrice;
     priceTag1.innerText = totalPrice;
-    TToal.push(data);
-    localStorage.setItem("GGtotal", JSON.stringify(TToal));
+    totalitem.push(data);
+    localStorage.setItem("GGtotal", JSON.stringify(totalitem));
   });
 }
 
@@ -104,7 +104,8 @@ function deleteProduct(el, index) {
   data.splice(index, 1);
   localStorage.setItem("cartdetail", JSON.stringify(data));
   dispcart(data);
-  
+  let num = document.getElementById("coo");
+  num.innerHTML = data.length;
 }
 
 function gtotal() {
@@ -112,44 +113,9 @@ function gtotal() {
   document.querySelector("#grandtotal").innerText = total;
 }
 
-document.querySelector("#code").addEventListener("click", promoCode);
-
 document.querySelector("#btn2").addEventListener("click", function () {
-  var userdata = JSON.parse(localStorage.getItem("userdetail"));
-  //   if (userdata == null) {
-  //     window.location.href = "./signup.html";
-  //   } else {
   window.location.href = "./address.html";
-  //   }
 });
 
-//function for promocode
-function promoCode(event) {
-  event.preventDefault();
-  let pcode = document.querySelector("#promo").value;
-  if (pcode == "masai30") {
-    let total = +document.querySelector("#subtotal").innerText;
-    let subtotal = +document.querySelector("#grandtotal").innerText;
-    if (total == subtotal) {
-      let dis = (total * 70) / 100;
-      document.querySelector("#grandtotal").innerText = dis;
-    } else {
-      alert("Promo code is already applied");
-    }
-  } else {
-    gtotal();
-    alert("Promo code is not valid");
-  }
-}
 dispcart(data);
 total();
-
-let header = document.getElementById("header");
-fetch("./header.html")
-  .then((res) => res.text())
-  .then((data) => {
-    header.innerHTML = data;
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(data, "text/html");
-    eval(doc.querySelector("script").textContent);
-  });

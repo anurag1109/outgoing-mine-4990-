@@ -161,6 +161,9 @@ hr {
     width: 295px
 }
 
+.next:hover{
+    cursor: pointer;
+}
 .btn-back {
     width: 250px;
     margin-top: 30px;
@@ -169,7 +172,7 @@ hr {
     margin-left: 40px;
 }
 
-.otp {
+/* .otp {
     margin: auto;
     width: 700px;
     text-align: center;
@@ -194,7 +197,7 @@ hr {
 
 .otp>h1 {
     text-align: center;
-}
+} */
 
 #main {
     width: 95%;

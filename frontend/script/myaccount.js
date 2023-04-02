@@ -1,15 +1,15 @@
-let x = "http://localhost:4500";
+let x = "https://kind-gray-horse-wear.cyclic.app";
 document.querySelector("form").addEventListener("submit", signinDetails);
-userArray = JSON.parse(localStorage.getItem("newUser")) || [];
-function signinDetails(event) {
-  event.preventDefault();
+// userArray = JSON.parse(localStorage.getItem("newUser")) || [];
+function signinDetails(e) {
+  e.preventDefault();
   var first_name = document.querySelector(".first_name").value;
   var last_name = document.querySelector(".last_name").value;
   var email = document.querySelector(".email").value;
   var password = document.querySelector(".pass").value;
   var gender = document.querySelector(".gender").value;
   var age = document.querySelector(".age").value;
-  var dob = document.querySelector(".DOB").value;
+  // var dob = document.querySelector(".DOB").value;
   var data = {
     first_name,
     last_name,
@@ -18,18 +18,17 @@ function signinDetails(event) {
     gender,
     age,
   };
-
+  console.log(data);
   fetch(`${x}/users/register`, {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(data),
   })
     .then((data) => data.json())
-    .then((data) => alert(data.msg));
-  userArray.push(data);
-  // localStorage.setItem("newUser", JSON.stringify(userArray));
-  // alert("User Sign Up Successful");
-  window.location.href = "myaccount.html";
+    .then((data) => {
+      alert(data.msg);
+      window.location.href = "myaccount.html";
+    });
 }
 
 document.querySelector(".login_form").addEventListener("submit", login);
@@ -47,15 +46,10 @@ function login(event) {
     .then((data) => data.json())
     .then((user) => {
       alert(user.msg);
-      localStorage.setItem("set_token", JSON.stringify(user));
+      alert("token: " + (user.token ? user.token : ""));
+      if (user.token) {
+        localStorage.setItem("set_token", JSON.stringify(user));
+        window.location.href = "../index.html";
+      }
     });
-  // for (var i = 0; i < registeredUsers.length; i++) {
-  //   if (
-  //     registeredUsers[i].email === login_email &&
-  //     registeredUsers[i].pass === login_pass
-  //   ) {
-  //     alert("Login Succesful");
-  //     window.location.href = "../index.html";
-  //   }
-  // }
 }

@@ -97,17 +97,11 @@ span {
 }
 
 .block-1 {
-    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; */
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 420px 150px 420px;
     column-gap: 20px;
     grid-template-areas: "one two" "one three" "one four"
 }
-
-
-/* .block-1>div {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-} */
 
 .block-1>div:first-child {
     grid-area: one;
@@ -151,17 +145,12 @@ span {
 }
 
 .block-2 {
-    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; */
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 420px 150px 420px;
     column-gap: 20px;
     grid-template-areas: "two one" "three one" "four one"
 }
 
-
-/* .block-2>div {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-} */
 
 .block-2>div:first-child {
     grid-area: one;
