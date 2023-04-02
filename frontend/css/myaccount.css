@@ -48,12 +48,8 @@ header {
 
 .shop_bag > i {
   margin: 0px 5px;
-  /* padding: 10px; */
 }
 
-.sale70 {
-  /* position: fixed; */
-}
 .main_category {
   display: flex;
   justify-content: space-between;
@@ -69,7 +65,6 @@ header {
   display: flex;
 }
 
-/*.service  */
 .service {
   width: 80%;
   margin: auto;

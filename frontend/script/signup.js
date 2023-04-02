@@ -1,6 +1,5 @@
 document.querySelector("form").addEventListener("submit", signinDetails);
 userArray = JSON.parse(localStorage.getItem("newUser")) || [];
-// console.log(userArray);
 function signinDetails(event) {
   event.preventDefault();
   var firstName = document.querySelector(".first_name").value;

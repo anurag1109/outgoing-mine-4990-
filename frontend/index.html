@@ -8,9 +8,6 @@
     <title>Mytheresa</title>
     <link rel="stylesheet" href="./css/women.css">
     <link rel="stylesheet" href="./css/utils.css">
-    <link rel="stylesheet" href="./css/header.css">
-    <!-- <link rel="stylesheet" href="./css/navstyle1.css"> -->
-    <!-- <link rel="stylesheet" href="/All-pages-Header/custom.css"> -->
 </head>
 
 <div id="header"></div>
@@ -55,9 +52,9 @@
                 <img src="https://img.mytheresa.com/media/static/raw/cms/l/WW_HP_2022_CW24/ActboxTall_Loro_Piana_Resor_Collection_2x_20220613121847.jpg?imwidth=600&imdensity=1" alt="">
                 <p class="buttons button-padding"><a href="./routes/productlist.html">SHOP NOW &nbsp;<span>>></span></a></p>
             </div>
-            <div onclick="sendal()">
+            <div onclick="footwear()">
                 <img src="https://img.mytheresa.com/media/static/raw/cms/l/WW_HP_2022_CW24/CW24_ActboxSmall_2x__20220612214303.jpg?imwidth=600&imdensity=1" alt="">
-                <p class="buttons"><a onclick="sendal()">SHOP NOW &nbsp;<span>>></span></a></p>
+                <p class="buttons"><a onclick="footwear()">SHOP NOW &nbsp;<span>>></span></a></p>
             </div>
             <div class="font-family text-center">
                 <br>
@@ -143,47 +140,9 @@
     <div id="footer">
 
     </div>
-
-
-
-
 </body>
 
 </html>
 
-<script>
-    const link = document.querySelectorAll('.link');
-    for (let i = 0; i < link.length; i++) {
-        link[i].addEventListener('click', womanpage);
-    }
-
-    function womanpage(event) {
-        window.location.href = "./routes/productlist.html"
-    }
-
-    function sendal(event) {
-        // window.location.href = "/Suraj-all-work/womensandalinner/womensandalinner.html"
-    }
-
-
-    let footer = document.getElementById("footer");
-    fetch('./routes/footer.html')
-        .then(res => res.text())
-        .then(data => {
-            footer.innerHTML = data
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(data, "text/html")
-            eval(doc.querySelector("script").textContent)
-        })
-
-    let header = document.getElementById('header');
-
-    fetch('./routes/header.html')
-        .then(res => res.text())
-        .then(data => {
-            header.innerHTML = data
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(data, "text/html")
-            eval(doc.querySelector("script").textContent)
-        })
-</script>
+<script src="./script/index.js"></script>
+<script src="./script/headerfooter.js"></script>

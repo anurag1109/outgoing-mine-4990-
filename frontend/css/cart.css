@@ -8,7 +8,6 @@ html::-webkit-scrollbar {
 
 html::-webkit-scrollbar-thumb {
     border-radius: 25px;
-    /* background-color: black; */
     background: linear-gradient(black, grey);
 }
 * {
@@ -37,19 +36,15 @@ br+#shopingbag {
     width: 100%;
 }
 
-
-/* #shopingbag>div>button{
-         border: none;
-         padding: 10px;
-         background-color: black;
-         color: white;
-     } */
-
 .btn {
     border: none;
     padding: 10px;
     background-color: black;
     color: white;
+
+}
+.btn:hover{
+    cursor: pointer;
 }
 
 table {
@@ -60,7 +55,6 @@ table {
 }
 
 table thead {
-    /* background: rebeccapurple; */
     color: red;
     font-size: 20px;
     font-family: system-ui;
@@ -79,13 +73,11 @@ table tbody td {
 }
 
 table>thead>tr>th:first-child {
-    /* background-color: black; */
     color: wheat;
     width: 80%;
 }
 
 #pimage {
-    /* border: 2px solid red; */
     width: 20%;
     display: flex;
 }
@@ -95,7 +87,6 @@ table>thead>tr>th:first-child {
 }
 
 #pimage>p {
-    /* border: 2px solid green; */
     padding: 5px;
     letter-spacing: .8px;
     font-size: 17px;
@@ -103,8 +94,7 @@ table>thead>tr>th:first-child {
 }
 
 #para {
-    /* border: 2px solid teal; */
-    margin-top: 20px;
+     margin-top: 20px;
     font-family: "Poppins"
 }
 
@@ -115,12 +105,10 @@ table>thead>tr>th:first-child {
 
 #para>p+p {
     width: 70%;
-    /* border: 2px solid black; */
     justify-content: right;
 }
 
 #para>button {
-    /* border: 2px solid rebeccapurple; */
     padding: 10px;
     background-color: white;
     color: black;
@@ -155,14 +143,12 @@ hr {
 
 p {
     width: 80%;
-    /* border: 3px solid green; */
     margin: auto;
     font-family: "Poppins"
 }
 
 #check {
     width: 80%;
-    /* border: 2px solid rebeccapurple; */
     height: 200px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -173,11 +159,9 @@ p {
 
 #check>div {
     height: 90%;
-    /* border: 2px solid rebeccapurple; */
 }
 
 #check>div>div>input {
-    /* background-color: black; */
     width: 50%;
     line-height: 40px;
 }
@@ -250,7 +234,6 @@ h4 {
 }
 
 #contact>div>p {
-    /* border: 2px solid rebeccapurple; */
     width: 80%;
     text-align: center;
     line-height: 38px;
@@ -259,7 +242,6 @@ h4 {
 
 #contact>div>i {
     width: 20%;
-    /* border: 2px solid green; */
     font-size: 40px;
     display: block;
     justify-content: center;

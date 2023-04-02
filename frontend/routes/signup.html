@@ -166,13 +166,4 @@
   </body>
 </html>
 <script src="../script/signup.js"></script>
-<script>   
- let header = document.getElementById('header');
- fetch('./header.html')
-  .then(res => res.text())
-  .then(data => {
-      header.innerHTML = data
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(data, "text/html")
-      eval(doc.querySelector("script").textContent)
-  })</script>
+<script src="../script/headerfooter.js"></script>

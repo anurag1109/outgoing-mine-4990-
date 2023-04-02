@@ -5,7 +5,6 @@ html::-webkit-scrollbar {
 
 html::-webkit-scrollbar-thumb {
     border-radius: 25px;
-    /* background-color: black; */
     background: linear-gradient(black, grey);
 }
 
@@ -24,26 +23,24 @@ hr {
     margin-bottom: 60px;
 }
 
+#coo{
+    
+    color: rgb(166, 50, 50);
+}
 #cont {
-    /* border: 3px solid black; */
+
     width: 86%;
-    /* height: 100px; */
     display: flex;
     justify-content: space-between;
     margin: auto;
-    /* height: 40px; */
-    /* position: fixed; */
     margin-top: 20px;
 }
 
 #cont>div:nth-child(1) {
     width: 30%;
-    /* border: 2px solid rebeccapurple; */
-    /* height: 100%; */
 }
 
 #cont>div:nth-child(1)>ul {
-    /* border: 2px solid red; */
     width: 70%;
     display: flex;
     justify-content: space-evenly;
@@ -63,12 +60,9 @@ hr {
 
 #cont>div:nth-child(2) {
     width: 40%;
-    /* border: 2px solid red; */
-    /* height: 100%; */
 }
 
 #cont>div:nth-child(2)>ul {
-    /* border: 2px solid red; */
     display: flex;
     justify-content: space-evenly;
 }
@@ -86,12 +80,11 @@ hr {
     /* font-weight: bold; */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-
-
-/* logo css starts from here */
+#cont #myaccount{
+    color:rgb(193, 67, 67)
+}
 
 #logo>a>img {
-    /* border: 2px solid red; */
     width: 20%;
     display: block;
     margin: auto;
@@ -100,7 +93,6 @@ hr {
 
 #logo {
     width: 80%;
-    /* border: 2px solid  red; */
     display: flex;
     justify-content: space-between;
     margin: auto;
@@ -110,31 +102,26 @@ hr {
 
 #logo>div>div {
     width: 40%;
-    /* border: 2px solid blue; */
     height: 100%;
     margin: auto;
 }
 
 #logo>div>div>img {
     width: 100%;
-    /* border: 2px solid red; */
     margin: auto;
 }
 
-#abso>img {
+#abso>a>img {
     width: 300px !important;
-    /* border: 2px solid red; */
-    /* position: absolute; */
-    margin-left: 150px !important;
+    margin-left: 120px !important;
 }
 
 #logo>div:nth-child(1) {
-    /* border: 2px solid red; */
     width: 75%;
 }
 
 #logo>div:nth-child(2) {
-    /* border: 2px solid red; */
+  
     width: 20%;
 }
 
@@ -216,11 +203,9 @@ a {
 .header {
     display: block;
     width: 80%;
-    /* position: relative; */
     z-index: 99;
     padding: 15px;
     margin: auto;
-    /* position: fixed; */
     top: 0;
     background-color: white;
 }
@@ -256,11 +241,11 @@ a {
     transition: color 0.3s ease;
     font-family: "poppins";
 }
-
 .header .menu>ul>li {
     display: inline-block;
     line-height: 50px;
-    margin-left: 15px;
+    margin-left: 10px;
+    /* margin-left: 15px; */
     font-family: "poppins";
 }
 
@@ -274,18 +259,18 @@ a {
     font-family: "poppins";
 }
 
+
 .header .menu>ul>li .sub-menu {
     position: absolute;
     z-index: 500;
     background-color: #ffffff;
-    /* box-shadow: -2px 2px 70px -25px rgba(0, 0, 0, 0.3); */
     padding: 20px 30px;
-    transition: all 0.5s ease;
+    transition: all 0.1s ease;
     margin-top: 25px;
     opacity: 0;
     visibility: hidden;
     border: 0.5px solid #f2f2f2;
-    /* height: 100px; */
+    /* height: 0px; */
 }
 
 @media(min-width: 992px) {
@@ -332,8 +317,7 @@ a {
 }
 
 .header .menu>ul>li .sub-menu.mega-menu {
-    left: 50%;
-    transform: translateX(-50%);
+    left: 10%;
 }
 
 .header .menu>ul>li .sub-menu.mega-menu-column-4 {
@@ -375,6 +359,9 @@ a {
     color: black;
 }
 
+.myaccount{
+    color:red
+}
 
 /* banner section */
 
@@ -674,12 +661,9 @@ input[type=text]:focus {
 
 #ulli>div {
     width: 40%;
-    /* border: 2px solid blue; */
-    /* height: 100px; */
 }
 
 #ulli>div>ul {
-    /* list-style-type: circle; */
     line-height: 20px;
     margin-top: 10px;
 }
@@ -694,15 +678,6 @@ input[type=text]:focus {
     font-weight: bold;
 }
 
-
-/* 
-.nevbarbottom ul {
-    all: initial!important;
-    display: flex;
-    gap: 50px;
-    border: 1px solid green !important;
-    appearance: none !important;
-} */
 
 .menu>ul {
     all: initial!important;

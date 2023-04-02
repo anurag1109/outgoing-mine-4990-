@@ -39,15 +39,12 @@
 
           <input type="text" class="gender" placeholder="Gender" /><br />
           <br />
-          <input type="number" class="age" placeholder="age" /><br />
+          <input type="number" class="age" placeholder="Age" /><br />
           <br />
           <input type="password" class="pass" placeholder="Enter password" />
           <br />
           <br />
-          Date of Birth <br />
-          <input class="DOB" type="date" placeholder="DD/MM/YYYY" />
-          <br />
-          <br />
+    
           <div class="agree_terms">
             <input type="checkbox" />
             <p class="check_p">
@@ -86,7 +83,6 @@
           >
           <br />
           <br />
-          <!-- <button class="login_btn" onclick="login()">LOG IN</button> -->
           <input type="submit" value="LOGIN" class="login_button" />
           <br />
         </form>
@@ -198,14 +194,6 @@
     </footer>
   </body>
 </html>
-<script src="../script/myaccount.js"></script>
-<script>   
-  let header = document.getElementById('header');
-  fetch('./header.html')
-   .then(res => res.text())
-   .then(data => {
-       header.innerHTML = data
-       const parser = new DOMParser();
-       const doc = parser.parseFromString(data, "text/html")
-       eval(doc.querySelector("script").textContent)
-   })</script>
+<script src="../script/myaccount.js"></script>   
+<script src="../script/headerfooter.js"></script>
+
